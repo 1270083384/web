@@ -4,19 +4,64 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="css/wedding-2.css">
-    <link rel="stylesheet" href="css/wedding-3.css">
-    <link rel="stylesheet" href="css/room.css">
-    <link rel="stylesheet" href="js/jquery.min.js">
-    <link rel="stylesheet" href="js/bootstrap.min.js">
-    <link rel="stylesheet" href="js/jquery-3.1.1.js">
-    <script type="text/javascript" src="js/jquery.easyui.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/easyui.css">
+    <link rel="stylesheet" type="text/css" href="css/icon.css">
+    <script type="text/javascript" src="js/jquery-3.1.1.js">
+    </script>
+    <link rel="stylesheet" type="text/css" href="js/demo.css">
+    <script type="text/javascript" src="js/jquery.easyui.min.js">
+    </script>
 </head>
 
 <body>
+<center><h1>房产信息查询系统</h1></center>
+<div style="margin:20px 0;">
+<p>
+    <a href="javascript:void(0)"  onclick="topCenter()" id="aid"></a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" onclick="topRight()">TopRight</a>
+</p>
+    </div>
+<script>
+    function topCenter(){
+        $.messager.show({
+            msg:'欢迎使用房产信息查询系统',
+            width:'500px',
+            height:'300px',
+            showType:'slide',
+            style:{
+                right:'',
+                bottom:'',
 
-<div id="win" class="easyui-window" title="My Window" style="width:300px;height:100px;padding:5px;">
-    Some Content.
-</div>
+            }
+
+        });
+    }
+    (()=>{
+        // 兼容IE
+        if(document.all) {
+            document.getElementById("aid").click();
+        }
+        // 兼容其它浏览器
+        else {
+            var e = document.createEvent("MouseEvents");
+            e.initEvent("click", true, true);
+            document.getElementById("aid").dispatchEvent(e);
+        }
+    })();
+
+    function topRight(){
+        $.messager.show({
+            title:'My Title',
+            msg:'The message content',
+            showType:'show',
+            style:{
+                left:'',
+                right:0,
+                top:document.body.scrollTop+document.documentElement.scrollTop,
+                bottom:''
+            }
+        });
+    }
+</script>
 </body>
 </html>
